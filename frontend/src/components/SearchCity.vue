@@ -12,6 +12,7 @@
       :zoom="7"
       map-type-id="roadmap"
       ref="gmap"
+      @click="handleMapClick"
     >
     </GMapMap>
   </div>

@@ -1,4 +1,5 @@
 import { Options, Vue } from 'vue-class-component';
+import store from "../store/index";
 
 @Options({
   props: {
@@ -13,6 +14,7 @@ export default class SearchCity extends Vue {
       lat: place.geometry.location.lat(),
       lng: place.geometry.location.lng(),
     };
+    store.dispatch("updateSelectedPlace", this.selectedPlace);
   }
 
 

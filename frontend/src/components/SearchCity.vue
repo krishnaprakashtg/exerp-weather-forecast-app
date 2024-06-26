@@ -19,8 +19,15 @@
         :zoom="7"
         map-type-id="roadmap"
         ref="gmap"
-        @click="handleMapClick"
+        @click="mapEventHandler"
       >
+      <GMapMarker
+        :position="selectedPlace"
+        :clickable="true"
+        :draggable="true"
+        @dragend="mapEventHandler"
+        @click="center = selectedPlace"
+      />
       </GMapMap>
     </div>
   </div>

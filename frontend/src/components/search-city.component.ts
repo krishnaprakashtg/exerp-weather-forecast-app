@@ -15,7 +15,7 @@ export default class SearchCity extends Vue {
     this.dispatchEvent();
   }
 
-  handleMapClick(event: any) {
+  mapEventHandler(event: any) {
     this.selectedPlace = {
       lat: event.latLng.lat(),
       lng: event.latLng.lng(),

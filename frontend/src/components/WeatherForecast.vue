@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1 v-if="res" class="flex items-center justify-center">
+    <h1 v-if="weatherInfo" class="flex items-center justify-center">
       <span class="text-2xl font-bold">Weather forecast for city</span>
       <span class="w-8 ml-2">
         <svg

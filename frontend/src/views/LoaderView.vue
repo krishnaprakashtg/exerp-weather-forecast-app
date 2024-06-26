@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-black bg-opacity-15 absolute h-screen left-0 right-0 top-0 bottom-0 flex items-center justify-center"
+    class="bg-black bg-opacity-15 absolute left-0 right-0 top-0 bottom-0 flex items-center justify-center"
   >
     <div role="status">
       <svg

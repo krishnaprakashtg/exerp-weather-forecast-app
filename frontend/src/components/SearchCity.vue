@@ -1,19 +1,35 @@
 <template>
   <div>
     <h3>Type a city name to search</h3>
-    <GMapAutocomplete @place_changed="placeChanged" class="gmap-autocompolete"/>
+    <div class="w-1/4 m-auto">
+      <GMapAutocomplete
+        @place_changed="placeChanged"
+        class="gmap-autocompolete"
+      />
+    </div>
 
-    <div>You can also click a location on the map to view the weather forecast</div>
-    <!-- TODO add click event -->
-    <GMapMap
-      v-if="selectedPlace"
-      class="gmap-class"
-      :center="selectedPlace"
-      :zoom="7"
-      map-type-id="roadmap"
-      ref="gmap"
-    >
-    </GMapMap>
+    <div>
+      You can also click a location on the map to view the weather forecast
+    </div>
+    <div class="p-8">
+      <GMapMap
+        v-if="selectedPlace"
+        class="gmap-class"
+        :center="selectedPlace"
+        :zoom="7"
+        map-type-id="roadmap"
+        ref="gmap"
+        @click="mapEventHandler"
+      >
+      <GMapMarker
+        :position="selectedPlace"
+        :clickable="true"
+        :draggable="true"
+        @dragend="mapEventHandler"
+        @click="center = selectedPlace"
+      />
+      </GMapMap>
+    </div>
   </div>
 </template>
 

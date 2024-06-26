@@ -1,4 +1,4 @@
-import * as backendApi from '../shared/backend-api';
+import * as backendApi from "../shared/backend-api";
 
 export interface ForecastModel {
   latitude: number;
@@ -22,7 +22,6 @@ export default class WeatherService {
   constructor() {}
 
   getWeatherForecast(lat: number, lng: number): Promise<ForecastModel> {
-    return backendApi.get('weather/forecast', {lat, lng});
+    return backendApi.get("weather/forecast", { lat, lng });
   }
-
 }

@@ -22,13 +22,16 @@ export default class WeatherForecast extends Vue {
       (newVal: { lat: number | null; lng: number | null }) => {
         const { lat, lng } = newVal;
         if (lat && lng) {
+          store.dispatch("toggleLoader", true);
           this.weatherService
             .getWeatherForecast(lat, lng)
             .then((res) => {
               this.weatherInfo = res;
+              store.dispatch("toggleLoader", false);
             })
             .catch((err) => {
               this.error = err;
+              store.dispatch("toggleLoader", false);
             });
         }
       }
